@@ -1,5 +1,6 @@
 body {
-	background-image: url("../images/smb.png");
+	background-image: url("../images/smb-missing-flag.png");
+	position: relative;
 }
 
 .title {
@@ -22,6 +23,12 @@ body {
 header {
 	width: 30%;
 	margin: 20px auto;
+}
+
+#flag-container {
+	position: absolute;
+	left: 169px;
+	top: 187px; /* top=187 bottom=597 */
 }
 
 .container {

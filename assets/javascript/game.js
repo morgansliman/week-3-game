@@ -15,6 +15,8 @@ var game = {
 			"luigi",
 			"yoshi"],
 
+	flagPos: 187,
+
 	remainingGuesses: 10,
 
 	userGuess: "",
@@ -31,6 +33,7 @@ var game = {
 	},
 
 	resetPage: function() {
+		this.flagPos = 187;
 		this.blanks = [];
 		this.guessedLetters = [];
 		this.remainingGuesses = 10;
@@ -38,11 +41,13 @@ var game = {
 		for (var i=0; i < this.newWord.length; i++) {
 			this.blanks.push('_');
 		}
+		byid('flag-container').style.top = `${this.flagPos}px`;
 		byid('picture').src = "assets/images/questionBlock.png";
-		byid('guessed-letters-list').innerHTML = this.guessedLetters;
+		byid('guessed-letters-list').innerHTML = '-';
 		byid('instruction-text').innerHTML = "Try to figure out the word!";
 		byid('remaining-guesses-number').innerHTML = this.remainingGuesses;
 		byid('current-word-blank').innerHTML = this.blanks.join(' ');
+		window.scrollTo(0,document.body.scrollHeight);
 	},
 
 	checkGuess: function() {
@@ -69,6 +74,7 @@ var game = {
 
 	updateNumbers: function() {
 		this.remainingGuesses--
+		this.moveFlag();
 		if (this.remainingGuesses <= 0) {
 			this.endGame('loss');
 		} else {
@@ -77,7 +83,7 @@ var game = {
 	},
 
 	updateWrongGuesses: function() {
-		if (this.gameOn == false) {
+		if (this.gameOn == false && this.remainingGuesses >= 0) {
 			return;
 		} else {
 			this.guessedLetters.push(this.userGuess);
@@ -97,9 +103,13 @@ var game = {
 			byid('remaining-guesses-number').innerHTML = 0;
 			byid('instruction-text').innerHTML = "Game Over<br>Press any key to try again!";
 		}
+	},
+
+	moveFlag: function() {
+		this.flagPos = this.flagPos + 41;
+		byid('flag-container').style.top = `${this.flagPos}px`;
 	}
 }
-
 
 document.onkeyup = function(event) {
 	if (game.gameOn == false) {
@@ -110,8 +120,8 @@ document.onkeyup = function(event) {
 			if (game.checkGuess() && game.remainingGuesses > 0) {
 				game.updateLetters();
 			} else if (!game.checkGuess() && game.guessedLetters.indexOf(game.userGuess) == -1) {
-				game.updateNumbers();
 				game.updateWrongGuesses();
+				game.updateNumbers();
 			}
 		}
 	}
