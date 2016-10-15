@@ -1,0 +1,52 @@
+body {
+	background-image: url("../images/smb.png");
+}
+
+header {
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#hangman-title {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 80px;
+	text-align: center;
+	padding: 20px 20px 80px 20px;
+}
+
+.container {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+
+.right-col p {
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 16px;
+	line-height: 140%;
+	padding-top: 10px;
+}
+
+#instruction-text {
+	padding-top: 20px;
+}
+
+#guessed-letters-list {
+	padding-bottom: 20px;
+}
+
+.thumbnail {
+	border: none;
+	box-shadow: none;
+	background: none;
+	padding-top: 15px;
+}
+
+.main-content {
+	background: white;
+	opacity: 0.85;
+}

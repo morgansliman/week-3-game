@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman!</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<header>
+		<h1 id="hangman-title">
+			HANGMAN
+		</h1>
+	</header>
+
+	<section class="container">
+		<div class="row main-content">
+			<div class="col-md-6 left-col">
+				<span class="thumbnail">
+					<img id="picture" src="assets/images/questionBlock.png">
+				</span>
+			</div>
+			<div class="col-md-6 right-col">
+				<p id="instruction-text">Press Any Key to Get Started!</p>
+				<br>
+				<p id="win-text">Wins</p>
+				<p id="win-number">0</p>
+				<br>
+				<p id="current-word-text">Current Word</p>
+				<br>
+				<p id="current-word-blank"></p>
+				<br>
+				<p id="remaining-guesses-text">Number of Guesses Remaining</p>
+				<br>
+				<p id="remaining-guesses-number"></p>
+				<br>
+				<p id="guessed-letters-text">Letters Already Guessed</p>
+				<br>
+				<p id="guessed-letters-list"></p>
+			</div>
+		</div>
+	</section>
+	<script src="assets/javascript/game.js"></script>
+</body>
+</html>
