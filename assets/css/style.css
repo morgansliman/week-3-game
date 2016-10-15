@@ -2,17 +2,26 @@ body {
 	background-image: url("../images/smb.png");
 }
 
-header {
-	width: 60%;
-	margin-right: auto;
-	margin-left: auto;
+.title {
+	position: relative;
+}
+
+#title-pic {
+	width: 100%;
 }
 
 #hangman-title {
 	font-family: 'Press Start 2P', cursive;
-	font-size: 80px;
-	text-align: center;
-	padding: 20px 20px 80px 20px;
+	position: absolute;
+	font-size: 16px;
+	bottom: 31%;
+	left: 15%;
+	-webkit-transform: rotate(-22deg);
+}
+
+header {
+	width: 30%;
+	margin: 20px auto;
 }
 
 .container {
@@ -20,7 +29,7 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 	padding-bottom: 20px;
-	margin-bottom: 50px;
+	margin-bottom: 48px;
 }
 
 .right-col p {
