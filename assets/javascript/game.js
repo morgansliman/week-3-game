@@ -10,7 +10,7 @@ var game = {
 
 	terms: ["mario",
 			"peach",
-			"toad",
+			"boo",
 			"bowser",
 			"luigi",
 			"yoshi"],
@@ -41,7 +41,7 @@ var game = {
 		for (var i=0; i < this.newWord.length; i++) {
 			this.blanks.push('_');
 		}
-		byid('flag-container').style.top = `${this.flagPos}px`;
+		byid('flag-container').style.top = this.flagPos + 'px';
 		byid('picture').src = "assets/images/questionBlock.png";
 		byid('guessed-letters-list').innerHTML = '-';
 		byid('instruction-text').innerHTML = "Try to figure out the word!";
@@ -96,8 +96,10 @@ var game = {
 
 		if (result == 'win') {
 			var count = parseInt(byid('win-number').innerHTML);
+			var audio = new Audio('assets/sounds/' + this.newWord + '.wav');
+			audio.play();
 			byid('win-number').innerHTML = count + 1;
-			byid('picture').src = `assets/images/${this.newWord}.png`;
+			byid('picture').src = "assets/images/" + this.newWord + ".png";
 			byid('instruction-text').innerHTML = "You win! Press any key to play again.";
 		} else if (result == 'loss') {
 			byid('remaining-guesses-number').innerHTML = 0;
@@ -107,7 +109,7 @@ var game = {
 
 	moveFlag: function() {
 		this.flagPos = this.flagPos + 41;
-		byid('flag-container').style.top = `${this.flagPos}px`;
+		byid('flag-container').style.top = this.flagPos + 'px';
 	}
 }
 
